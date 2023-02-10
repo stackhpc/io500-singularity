@@ -16,5 +16,5 @@ RUN chmod -R ugo=rwX /io500
 # Add io500 binary to path:
 ENV PATH=/io500:$PATH
 
-# Don't run benchmarks from the io500.sh script:
-RUN sed -i 's/^  run_benchmarks$//' /io500/io500.sh
+# Copy in a modified version of the io500.sh:
+COPY setup-run.sh io500/

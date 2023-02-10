@@ -107,16 +107,8 @@ function main {
   export io500_resultdir=$(get_ini_global_param resultdir $PWD/results)/$ts
 
   setup $io500_workdir $io500_resultdir
-  run_benchmarks
 
-  if [[ ! -s "system-information.txt" ]]; then
-    echo "Warning: please create a 'system-information.txt' description by"
-    echo "copying the information from https://vi4io.org/io500-info-creator/"
-  else
-    cp "system-information.txt" $io500_resultdir
-  fi
-
-  create_tarball
+  # deleted everything past this point
 }
 
 main
