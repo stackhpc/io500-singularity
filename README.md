@@ -1,6 +1,6 @@
 # io500-singularity
 
-Run `io500` using Singularity or Apptainer on a Slurm cluster.
+Run `io500` using Singularity on a Slurm cluster.
 
 # Build
 A Docker container is automatically built on push by the [Github CI workflow](.github/workflows/build.yml) and uploaded to the GitHub Packages Repository.
@@ -14,10 +14,8 @@ A Docker container is automatically built on push by the [Github CI workflow](.g
 Note all of the above are available from default or EPEL repos on RockyLinuyx 8.7.
 
 # Run
-A debug (very short) run can be performed by running:
+A very short debug run can be performed by running:
 
-    sbatch submit.sh
+    $ sbatch submit.sh config-debug-run.ini 
 
-# TODOs
-- Parameterise number of mpi processes.
-- Setup for a proper run.
+Note this assumes an OpenHPC cluster with the `gnu12` and `openmpi4` module installed.

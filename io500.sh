@@ -81,7 +81,7 @@ function get_ini_global_param() {
 }
 
 function run_benchmarks {
-  $io500_mpirun $io500_mpiargs ${SINGULARITY_CMD} exec ${IO500_CONTAINER_SOURCE}:${IO500_CONTAINER_TAG} /io500 $io500_ini --timestamp $timestamp
+  $io500_mpirun $io500_mpiargs $io500_cmd $io500_ini --timestamp $timestamp
 }
 
 create_tarball() {
