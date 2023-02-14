@@ -12,7 +12,7 @@
 # This script takes its parameters from the same .ini file as io500 binary.
 io500_ini="$1"          # You can set the ini file here
 io500_mpirun="mpiexec"
-io500_mpiargs="-np 2"
+io500_mpiargs="" # -np not needed under Slurm
 
 function setup(){
   local workdir="$1"
@@ -81,7 +81,7 @@ function get_ini_global_param() {
 }
 
 function run_benchmarks {
-  $io500_mpirun $io500_mpiargs $PWD/io500 $io500_ini --timestamp $timestamp
+  $io500_mpirun $io500_mpiargs ${SINGULARITY_CMD} exec ${IO500_CONTAINER_SOURCE}:${IO500_CONTAINER_TAG} /io500 $io500_ini --timestamp $timestamp
 }
 
 create_tarball() {

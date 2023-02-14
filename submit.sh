@@ -13,6 +13,8 @@ echo SLURM_JOB_ID: $SLURM_JOB_ID
 echo UCX_NET_DEVICES: $UCX_NET_DEVICES
 module load gnu12 openmpi4
 
-${SINGULARITY} exec docker://ghcr.io/stackhpc/io500-singularity:${IO500_TAG} /io500/setup-run.sh ./config-debug-run.ini
-timestamp=$(date +%Y.%m.%d-%H.%M.%S)
-mpirun -np 2 ${SINGULARITY} exec docker://ghcr.io/stackhpc/io500-singularity:${IO500_TAG} /io500/io500 ./config-debug-run.ini --timestamp $timestamp
+export SINGULARITY_CMD=singularity
+export IO500_CONTAINER_SOURCE="docker://ghcr.io/stackhpc/io500-singularity"
+export IO500_CONTAINER_TAG="a106371"
+
+./io500.sh ./config-debug-run.ini
