@@ -26,9 +26,6 @@ ENV PATH=/usr/lib64/openmpi/bin:$PATH
 # Add io500 binary to path:
 ENV PATH=/io500:$PATH
 
-# Copy in a modified version of the io500.sh:
-COPY setup-run.sh io500/
-
 # Copy the actual executable
 COPY --from=build /io500/io500 /io500
 RUN chmod -R ugo=rwX /io500
