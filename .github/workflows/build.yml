@@ -1,8 +1,8 @@
-name: Build Docker container
+name: Build and push Docker image
 on: push
 jobs:
   build_push_api:
-    name: Build and push execution environment
+    name: Build and push Docker image
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repository
