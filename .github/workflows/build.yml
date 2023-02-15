@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - images/**
+      - .github/workflows/**
 jobs:
   build_push_api:
     name: Build and push Docker image
