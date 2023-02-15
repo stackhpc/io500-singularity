@@ -7,7 +7,7 @@
 #SBATCH --partition=compute
 
 export UCX_NET_DEVICES=all
-export IO500_CONTAINER_TAG="a106371"
+export IO500_CONTAINER_TAG="bb942db"
 export io500_cmd="singularity exec docker://ghcr.io/stackhpc/io500-singularity:${IO500_CONTAINER_TAG} /io500"
 
 echo SLURM_JOB_NODELIST: $SLURM_JOB_NODELIST
