@@ -4,7 +4,6 @@
 
 #SBATCH --ntasks=2
 #SBATCH --exclusive
-#SBATCH --partition=compute
 
 export UCX_NET_DEVICES=all
 export IO500_CONTAINER_TAG="bb942db"
