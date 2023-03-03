@@ -14,9 +14,9 @@ RUN cd io500 && ./prepare.sh
 
 FROM rockylinux:8.7
 
-# Install MPI libraries
+# Install MPI libraries and tests
 RUN dnf install -y \
-    autoconf automake git make openmpi \
+    autoconf automake git make mpitests-openmpi \
     && dnf clean all \
     && rm -rf /var/cache/dnf
 
