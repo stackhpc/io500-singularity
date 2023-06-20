@@ -41,7 +41,7 @@ jobs:
         id: image-meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/stackhpc/io500-singularity
+          images: ghcr.io/${{ github.repository }}
           # Produce the branch name or tag and the SHA as tags
           tags: |
             type=ref,event=branch
